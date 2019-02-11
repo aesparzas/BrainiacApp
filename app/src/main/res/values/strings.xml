@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">BrainiacApp</string>
+
+    <!-- Navigations drawer header -->
+    <string name="title_nav_header_results">Answered Correctly</string>
+    <string name="title_nav_header_registered">Registered since</string>
+
+    <!-- Navigation drawer menu -->
+    <string name="title_nav_drawer_statistics">Statistics</string>
+    <string name="title_nav_drawer_play_modes">Play Modes</string>
+    <string name="title_nav_drawer_upcoming">Upcoming</string>
+    <string name="title_nav_drawer_terms_and_conditions">Terms and conditions</string>
+    <string name="title_nav_drawer_configurations">Configurations</string>
+    <string name="title_nav_drawer_about">About</string>
+
+    <!-- Tabs title -->
+    <string name="title_tab_play">PLAY</string>
+    <string name="title_tab_stats">MY STATS</string>
+    <string name="title_tab_categories">CATEGORIES</string>
+
+    <!-- Card View Gamemods -->
+    <string name="title_play_cv_roulette">Roulette</string>
+    <string name="title_play_cv_subject">Subject</string>
+    <string name="title_play_cv_fact">Fact</string>
+
+    <!-- Music -->
+    <string name="title_music_cv_description">Description</string>
+    <string name="title_music_cv_api">API use</string>
 </resources>
