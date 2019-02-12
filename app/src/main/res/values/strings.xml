@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BrainiacApp</string>
 
-    <!-- Navigations drawer header -->
+    <!-- Navigation drawer header -->
     <string name="title_nav_header_results">Answered Correctly</string>
     <string name="title_nav_header_registered">Registered since</string>
 
@@ -20,13 +20,36 @@
     <string name="title_tab_stats">MY STATS</string>
     <string name="title_tab_categories">CATEGORIES</string>
 
-    <!-- Card View Gamemods -->
-    <string name="title_play_cv_roulette">Roulette</string>
-    <string name="title_play_cv_subject">Subject</string>
-    <string name="title_play_cv_fact">Fact</string>
+    <!-- CardView categories -->
+    <string name="title_cv_roulette">Roulette</string>
+    <string name="description_cv_roulette">Random questions of random categories. Prove you are a know-it-all</string>
+    <string name="title_cv_subject">Subject</string>
+    <string name="description_cv_subject">Random questions of one category. So you can master one subject</string>
+    <string name="title_cv_fact">Fact</string>
+    <string name="description_cv_fact">Read about your favourite category. One new per day</string>
+    <string name="action_configure"></string>
 
-    <!-- Music -->
-    <string name="title_music_cv_description">Description</string>
-    <string name="title_music_cv_api">API use</string>
+    <!-- CardView Description -->
+    <string name="title_description">Description</string>
+    <string name="title_api">API use</string>
+    <string name="description_test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium imperdiet ligula, ut finibus felis cursus id. Phasellus commodo pretium tortor id lacinia. Nulla malesuada orci tincidunt maximus tristique. Aenean nec scelerisque nulla, vitae pharetra dui. Nam urna mauris, efficitur vel aliquam quis, ultrices ut ligula. Suspendisse sit amet purus sit amet lectus accumsan mollis. Fusce in mauris non metus sagittis tempor in non risus. Mauris in aliquet dui. Sed posuere rhoncus nunc et venenatis.</string>
 
+    <!-- CardView Summary -->
+    <string name="title_summary">Summary</string>
+    <string name="detail_total_questions_showed">Total questions showed: </string>
+    <string name="detail_questions_answered">Questions answered correctly: </string>
+    <string name="detail_facts_read">Facts read: </string>
+    <string name="detail_matches_played">Matches played: </string>
+
+    <!-- CardView Points -->
+    <string name="title_points">Points</string>
+    <string name="subtitle_date">Date</string>
+    <string name="score_points">pts</string>
+    <string name="action_see_all">SEE ALL</string>
+
+    <!-- Question Test -->
+    <string name="question_test">Where was Wolfgang Amadeus Mozart born on January 27th 1756?</string>
+    <string name="action_option">Viena, Austria</string>
+    <string name="action_answer">ANSWER</string>
+    <string name="title_ads">ADS</string>
 </resources>
