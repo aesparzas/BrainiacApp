@@ -1,62 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_padding_size_medium"
     android:background="@color/colorPrimaryDark">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_nav_header_imgv"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_padding_size_large">
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/shape_nav_header_image"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_padding_size_medium"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.35" />
+        <TextView
+            android:id="@+id/tv_nav_header_player_name"
+            style="@style/NavHeaderText"
+            android:layout_gravity="top"
+            android:text="@string/test_player_name" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="@dimen/margin_padding_size_medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tv_nav_header_player_results"
+            style="@style/NavHeaderText"
+            android:layout_gravity="center_vertical"
+            android:text="@string/title_nav_header_results" />
 
-            <TextView
-                android:id="@+id/tv_nav_header_player_name"
-                style="@style/NavHeaderText"
-                android:text="@string/app_name"
-                android:textSize="@dimen/margin_padding_size_medium"/>
+        <TextView
+            android:id="@+id/tv_nav_header_player_register"
+            style="@style/NavHeaderText"
+            android:layout_gravity="bottom"
+            android:text="@string/title_nav_header_registered" />
+    </FrameLayout>
 
-            <TextView
-                android:id="@+id/tv_nav_header_player_results"
-                style="@style/NavHeaderText"
-                android:text="@string/app_name" />
 
-            <TextView
-                android:id="@+id/tv_nav_header_player_register"
-                style="@style/NavHeaderText"
-                android:text="@string/app_name" />
 
-        </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

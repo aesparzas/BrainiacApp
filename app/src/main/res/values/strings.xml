@@ -29,7 +29,7 @@
     <string name="description_cv_fact">Read about your favourite category. One new per day</string>
     <string name="action_configure"></string>
 
-    <!-- CardView Description -->
+    <!-- CardView Details -->
     <string name="title_description">Description</string>
     <string name="title_api">API use</string>
     <string name="description_test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium imperdiet ligula, ut finibus felis cursus id. Phasellus commodo pretium tortor id lacinia. Nulla malesuada orci tincidunt maximus tristique. Aenean nec scelerisque nulla, vitae pharetra dui. Nam urna mauris, efficitur vel aliquam quis, ultrices ut ligula. Suspendisse sit amet purus sit amet lectus accumsan mollis. Fusce in mauris non metus sagittis tempor in non risus. Mauris in aliquet dui. Sed posuere rhoncus nunc et venenatis.</string>
@@ -48,8 +48,12 @@
     <string name="action_see_all">SEE ALL</string>
 
     <!-- Question Test -->
-    <string name="question_test">Where was Wolfgang Amadeus Mozart born on January 27th 1756?</string>
-    <string name="action_option">Viena, Austria</string>
     <string name="action_answer">ANSWER</string>
     <string name="title_ads">ADS</string>
+
+    <!-- Temporary strings -->
+    <string name="test_date">yyyy/mm/dd</string>
+    <string name="question_test">Where was Wolfgang Amadeus Mozart born on January 27th 1756?</string>
+    <string name="action_option">Viena, Austria</string>
+    <string name="test_player_name">Player Name</string>
 </resources>

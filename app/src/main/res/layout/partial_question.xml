@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/linear_question_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_padding_size_medium"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_category_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/colorAccentText"
+            android:textSize="@dimen/text_size_h6"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_question_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_padding_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_question_title"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_padding_size_medium"
+            android:text="@string/question_test" />
+        <include layout="@layout/view_divider"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_padding_size_medium">
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radio_opt_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_option"
+                app:buttonTint="@color/colorPrimary" />
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radio_opt_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_option"
+                app:buttonTint="@color/colorPrimary" />
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radio_opt_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_option"
+                app:buttonTint="@color/colorPrimary" />
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radio_opt_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_option"
+                app:buttonTint="@color/colorPrimary" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_padding_size_medium"
+        android:layout_marginEnd="@dimen/margin_padding_size_medium"
+        android:layout_marginBottom="@dimen/margin_padding_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_question_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="@string/action_answer"/>
+
+</android.support.constraint.ConstraintLayout>
