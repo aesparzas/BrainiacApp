@@ -27,13 +27,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
     @BindView(R.id.app_bar_toolbar)
     Toolbar toolbar;
     @BindView(R.id.drawer_main)
     DrawerLayout drawerLayout;
     @BindView(R.id.nav_main)
     NavigationView navigationView;
-    @BindView(R.id.app_bar_view_pager)
+    @BindView(R.id.view_pager)
     ViewPager viewPager;
     @BindView(R.id.app_bar_tab_layout)
     TabLayout tabLayout;
@@ -68,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        Fragment fragment = new TestFragment().newInstance();
+        adapter.addFragment(fragment, "TEST");
+        viewPager.setAdapter(adapter);
     }
 
 

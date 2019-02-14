@@ -2,29 +2,22 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    style="@style/BaseConstraint">
 
     <LinearLayout
+        style="@style/CardViewTitle"
         android:id="@+id/linear_item_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/margin_padding_size_medium"
-        android:background="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_points"
-            android:textColor="@color/colorAccentText"/>
+            style="@style/ContentLabelLight"
+            android:text="@string/title_points" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/subtitle_date"
-            android:textColor="@color/colorAccentText"/>
+            style="@style/ContentLabelLight"
+            android:text="@string/subtitle_date" />
     </LinearLayout>
     
     <android.support.v7.widget.RecyclerView
@@ -35,18 +28,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linear_item_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_points"/>
+        app:layout_constraintBottom_toTopOf="@id/cv_footer"/>
 
-    <Button
-        android:id="@+id/btn_points"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_padding_size_medium"
-        android:layout_marginEnd="@dimen/margin_padding_size_medium"
-        android:layout_marginBottom="@dimen/margin_padding_size_medium"
+    <LinearLayout
+        style="@style/CardViewFooter"
+        android:id="@+id/cv_footer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recycler_points"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            style="@style/Button"
+            android:id="@+id/btn_points"
+            android:text="@string/action_see_all"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

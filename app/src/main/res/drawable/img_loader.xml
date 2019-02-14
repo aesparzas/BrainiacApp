@@ -65,55 +65,65 @@
     <target android:name="line_1">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:duration="3000"
+                android:duration="2000"
                 android:propertyName="pathData"
                 android:valueFrom="M0,0h50v1h-50z"
                 android:valueTo="M45,0h50v1h-50z"
-                android:valueType="pathType" />
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
         </aapt:attr>
     </target>
 
     <target android:name="line_2">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:duration="3000"
+                android:duration="2000"
                 android:propertyName="pathData"
                 android:valueFrom="M45,4h50v1h-50z"
                 android:valueTo="M0,4h50v1h-50z"
-                android:valueType="pathType" />
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
         </aapt:attr>
     </target>
 
     <target android:name="line_3">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:duration="3000"
+                android:duration="2000"
                 android:propertyName="pathData"
                 android:valueFrom="M20,8h50v1h-50z"
                 android:valueTo="M45,8h50v1h-50z"
-                android:valueType="pathType" />
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
         </aapt:attr>
     </target>
 
     <target android:name="line_4">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:duration="3000"
+                android:duration="2000"
                 android:propertyName="pathData"
                 android:valueFrom="M0,12h50v1h-50z"
                 android:valueTo="M45,12h50v1h-50z"
-                android:valueType="pathType" />
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
         </aapt:attr>
     </target>
 
     <target android:name="line_5">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:duration="3000"
+                android:duration="2000"
                 android:propertyName="pathData"
                 android:valueFrom="M45,16h50v1h-50z"
                 android:valueTo="M0,16h50v1h-50z"
-                android:valueType="pathType" />
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
         </aapt:attr>
     </target>
     
