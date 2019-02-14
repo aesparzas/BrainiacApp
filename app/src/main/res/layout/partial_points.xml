@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/BaseConstraint">
+    style="@style/Card">
+    <android.support.constraint.ConstraintLayout
+        style="@style/BaseConstraint">
+        <LinearLayout
+            style="@style/CardViewTitle"
+            android:id="@+id/linear_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                style="@style/ContentLabelLight"
+                android:text="@string/title_points" />
+            <TextView
+                style="@style/ContentLabelLight"
+                android:text="@string/subtitle_date" />
+        </LinearLayout>
 
-    <LinearLayout
-        style="@style/CardViewTitle"
-        android:id="@+id/linear_item_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <TextView
-            style="@style/ContentLabelLight"
-            android:text="@string/title_points" />
-        <TextView
-            style="@style/ContentLabelLight"
-            android:text="@string/subtitle_date" />
-    </LinearLayout>
-    
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_points"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/margin_padding_size_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear_item_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/cv_footer"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_points"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_padding_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear_item_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cv_footer"/>
 
-    <LinearLayout
-        style="@style/CardViewFooter"
-        android:id="@+id/cv_footer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_points"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            style="@style/CardViewFooter"
+            android:id="@+id/cv_footer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_points"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            style="@style/Button"
-            android:id="@+id/btn_points"
-            android:text="@string/action_see_all"/>
-    </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+            <Button
+                style="@style/Button"
+                android:id="@+id/btn_points"
+                android:text="@string/action_see_all"/>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

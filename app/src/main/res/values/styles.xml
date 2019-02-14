@@ -55,6 +55,14 @@
     </style>
 
     <!-- CardView-->
+    <style name="Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">@dimen/margin_padding_size_small</item>
+        <item name="cardCornerRadius">@dimen/margin_padding_size_small</item>
+        <item name="cardElevation">@dimen/margin_padding_size_small</item>
+    </style>
     <style name="CardViewTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
