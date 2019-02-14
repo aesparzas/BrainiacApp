@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BaseConstraint">
+
+    <LinearLayout
+        style="@style/CardViewTitle"
+        android:id="@+id/linear_question_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            style="@style/TitleLabel"
+            android:id="@+id/tv_category_title"
+            android:text="@string/app_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/CardViewBody"
+        android:id="@+id/linear_question_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_question_title"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            style="@style/ContentLabel"
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_padding_size_medium"
+            android:text="@string/question_test" />
+
+        <include layout="@layout/view_divider"/>
+
+        <RadioGroup
+            style="@style/RadioGroup"
+            android:layout_marginTop="@dimen/margin_padding_size_medium">
+            <android.support.v7.widget.AppCompatRadioButton
+                style="@style/RadioButton"
+                android:id="@+id/radio_opt_1"
+                android:text="@string/action_option" />
+            <android.support.v7.widget.AppCompatRadioButton
+                style="@style/RadioButton"
+                android:id="@+id/radio_opt_2"
+                android:text="@string/action_option" />
+            <android.support.v7.widget.AppCompatRadioButton
+                style="@style/RadioButton"
+                android:id="@+id/radio_opt_3"
+                android:text="@string/action_option" />
+            <android.support.v7.widget.AppCompatRadioButton
+                style="@style/RadioButton"
+                android:id="@+id/radio_opt_4"
+                android:text="@string/action_option" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/CardViewFooter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_question_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            style="@style/Button"
+            android:text="@string/action_answer"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

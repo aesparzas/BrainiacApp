@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF4A56</color>
-    <color name="colorPrimaryDark">#4E4E4E</color>
-    <color name="colorAccent">#FFFFFF</color>
-    <color name="colorBackground">#DDDDDD</color>
-    <color name="colorPrimaryText">#E6000000</color>
-    <color name="colorSecondaryText">#CC000000</color>
-    <color name="colorAccentText">#FFFFFF</color>
-    <color name="colorDisabledText">#CCFFFFFF</color>
-    <color name="colorImageOverlay">#66FF4A56</color>
+    <color name="colorPrimary">@color/pink_peach</color>
+    <color name="colorPrimaryDark">@color/black_carbon</color>
+    <color name="colorAccent">@color/white_pure</color>
+    <color name="colorBackground">@color/gray_light</color>
+    <color name="colorPrimaryText">@color/black_transparent_e6</color>
+    <color name="colorSecondaryText">@color/black_transparent_cc</color>
+    <color name="colorAccentText">@color/white_pure</color>
+    <color name="colorDisabledText">@color/white_pure_cc</color>
+    <color name="colorImageOverlay">@color/pink_peach_66</color>
+
+    <!-- Palette colors -->
+    <color name="black_carbon">#4E4E4E</color>
+    <color name="black_transparent_87">#87000000</color>
+    <color name="black_transparent_cc">#CC000000</color>
+    <color name="black_transparent_e6">#E6000000</color>
+    <color name="gray_light">#DDDDDD</color>
+    <color name="pink_peach">#FF4A56</color>
+    <color name="pink_peach_66">#FF4A56</color>
+    <color name="pink_dark_peach">#FF4A56</color>
+    <color name="pink_light_peach">#FF8083</color>
+    <color name="white_pure">#FFFFFF</color>
+    <color name="white_pure_cc">#CCFFFFFF</color>
+
 </resources>

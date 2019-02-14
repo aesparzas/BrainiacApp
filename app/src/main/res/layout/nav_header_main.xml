@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_padding_size_medium"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_nav_header_imgv"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_padding_size_medium"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            style="@style/ContentLabelLight"
+            android:id="@+id/tv_nav_header_player_name"
+            android:layout_gravity="top"
+            android:text="@string/test_player_name" />
+
+        <TextView
+            style="@style/ContentLabelLight"
+            android:id="@+id/tv_nav_header_player_results"
+            android:layout_gravity="center_vertical"
+            android:text="@string/title_nav_header_results" />
+
+        <TextView
+            style="@style/ContentLabelLight"
+            android:id="@+id/tv_nav_header_player_register"
+            android:layout_gravity="bottom"
+            android:text="@string/title_nav_header_registered" />
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

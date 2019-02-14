@@ -1,0 +1,131 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+
+    <aapt:attr name="android:drawable">
+        <vector
+            android:height="24dp"
+            android:width="24dp"
+            android:viewportHeight="17"
+            android:viewportWidth="95"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <group android:name="left">
+                <path
+                    android:name="line_1"
+                    android:fillAlpha="1"
+                    android:fillColor="#ff4a56"
+                    android:pathData="M0,0h50v1h-50z"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#00000000"
+                    android:strokeWidth="0.05276448"/>
+
+                <path
+                    android:name="line_4"
+                    android:fillAlpha="1"
+                    android:fillColor="#ff4a56"
+                    android:pathData="M0,12h50v1h-50z"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#00000000"
+                    android:strokeWidth="0.05276448"/>
+
+            </group>
+
+            <group android:name="right">
+                <path
+                    android:name="line_2"
+                    android:fillAlpha="1"
+                    android:fillColor="#ff4a56"
+                    android:pathData="M45,4h50v1h-50z"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#00000000"
+                    android:strokeWidth="0.05276449"/>
+
+                <path
+                    android:name="line_5"
+                    android:fillAlpha="1"
+                    android:fillColor="#ff4a56"
+                    android:pathData="M45,16h50v1h-50z"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#00000000"
+                    android:strokeWidth="0.05276449"/>
+            </group>
+
+            <path
+                android:name="line_3"
+                android:fillAlpha="1"
+                android:fillColor="#ff4a56"
+                android:pathData="M20,8h50v1h-50z"
+                android:strokeAlpha="0"
+                android:strokeColor="#00000000"
+                android:strokeWidth="0.05276449"/>
+
+        </vector>
+    </aapt:attr>
+    
+    <target android:name="line_1">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="2000"
+                android:propertyName="pathData"
+                android:valueFrom="M0,0h50v1h-50z"
+                android:valueTo="M45,0h50v1h-50z"
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="line_2">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="2000"
+                android:propertyName="pathData"
+                android:valueFrom="M45,4h50v1h-50z"
+                android:valueTo="M0,4h50v1h-50z"
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="line_3">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="2000"
+                android:propertyName="pathData"
+                android:valueFrom="M20,8h50v1h-50z"
+                android:valueTo="M45,8h50v1h-50z"
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="line_4">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="2000"
+                android:propertyName="pathData"
+                android:valueFrom="M0,12h50v1h-50z"
+                android:valueTo="M45,12h50v1h-50z"
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="line_5">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="2000"
+                android:propertyName="pathData"
+                android:valueFrom="M45,16h50v1h-50z"
+                android:valueTo="M0,16h50v1h-50z"
+                android:valueType="pathType"
+                android:repeatMode="reverse"
+                android:repeatCount="infinite" />
+        </aapt:attr>
+    </target>
+    
+</animated-vector>
+

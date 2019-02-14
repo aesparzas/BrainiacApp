@@ -1,11 +1,84 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BaseConstraint">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <!-- TextView styles -->
+    <style name="TitleLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h6</item>
+        <item name="android:textColor">@color/colorAccentText</item>
+    </style>
+
+    <style name="TitleLabelDark" parent="TitleLabel">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="ContentLabel" parent="TitleLabelDark">
+        <item name="android:textSize">@dimen/text_size_body_2</item>
+    </style>
+
+    <style name="ContentLabelLight" parent="ContentLabel">
+        <item name="android:textColor">@color/colorAccentText</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="RadioGroup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="RadioButton" parent="RadioGroup">
+        <item name="buttonTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAccentText</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/shape_btn</item>
+    </style>
+
+    <!-- CardView-->
+    <style name="Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">@dimen/margin_padding_size_small</item>
+        <item name="cardCornerRadius">@dimen/margin_padding_size_small</item>
+        <item name="cardElevation">@dimen/margin_padding_size_small</item>
+    </style>
+    <style name="CardViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:padding">@dimen/margin_padding_size_medium</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CardViewBody" parent="CardViewTitle">
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <style name="CardViewFooter" parent="CardViewBody">
+        <item name="android:padding">@dimen/margin_padding_size_no</item>
+        <item name="android:layout_marginStart">@dimen/margin_padding_size_medium</item>
+        <item name="android:layout_marginEnd">@dimen/margin_padding_size_medium</item>
+        <item name="android:layout_marginBottom">@dimen/margin_padding_size_medium</item>
+    </style>
 </resources>

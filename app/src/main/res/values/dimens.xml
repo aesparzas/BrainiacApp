@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins & Padding, 8 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
+    <dimen name="margin_padding_size_no">0dp</dimen>
+    <dimen name="margin_padding_size_small">8dp</dimen>
+    <dimen name="margin_padding_size_medium">16dp</dimen>
+    <dimen name="margin_padding_size_large">24dp</dimen>
+    <dimen name="margin_padding_size_xlarge">32dp</dimen>
+    <dimen name="margin_padding_size_xxlarge">40dp</dimen>
+
+    <!-- Launcher Icon Size, https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size -->
+    <dimen name="launcher_icon_size">@dimen/standard_touch_size</dimen>
+
+    <!-- Touch Target Size, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-touch-target-size-->
+    <dimen name="standard_touch_size">48dp</dimen>
+
+    <!-- Toolbar, 4 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
+    <dimen name="toolbar_margin_size">4dp</dimen>
+    <dimen name="toolbar_icon_size">24dp</dimen>
+
+    <!-- Text size material desing-->
+    <dimen name="text_size_h1">96sp</dimen>
+    <dimen name="text_size_h2">60sp</dimen>
+    <dimen name="text_size_h3">48sp</dimen>
+    <dimen name="text_size_h4">34sp</dimen>
+    <dimen name="text_size_h5">24sp</dimen>
+    <dimen name="text_size_h6">20sp</dimen>
+    <dimen name="text_size_subtitle_1">16sp</dimen>
+    <dimen name="text_size_subtitle_2">14sp</dimen>
+    <dimen name="text_size_body_1">16sp</dimen>
+    <dimen name="text_size_body_2">14sp</dimen>
+    <dimen name="text_size_button">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_overline">10sp</dimen>
+
+    <!-- Letter spacing -->
+    <dimen name="h1_letter_spacing">-1.5sp</dimen>
+    <dimen name="h2_letter_spacing">-0.5sp</dimen>
+    <dimen name="h3_letter_spacing">0sp</dimen>
+    <dimen name="h4_letter_spacing">0.25sp</dimen>
+    <dimen name="h5_letter_spacing">0sp</dimen>
+    <dimen name="h6_letter_spacing">0.15sp</dimen>
+    <dimen name="subtitle_1_letter_spacing">0.15sp</dimen>
+    <dimen name="subtitle_2_letter_spacing">0.1sp</dimen>
+    <dimen name="body_1_letter_spacing">0.5sp</dimen>
+    <dimen name="body_2_letter_spacing">0.25sp</dimen>
+    <dimen name="button_letter_spacing">1.25sp</dimen>
+    <dimen name="caption_letter_spacing">0.4sp</dimen>
+    <dimen name="overline_letter_spacing">1.5sp</dimen>
+
+    <!-- Shapes -->
+    <dimen name="stroke_1">1dp</dimen>
+    <dimen name="stroke_2">2dp</dimen>
+    <dimen name="stroke_3">4dp</dimen>
+
+</resources>

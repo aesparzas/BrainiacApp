@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BaseConstraint">
+
+    <LinearLayout
+        style="@style/CardViewTitle"
+        android:id="@+id/tv_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            style="@style/TitleLabel"
+            android:text="@string/title_summary" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/CardViewBody"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_title"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            style="@style/ContentLabel"
+            android:text="@string/detail_total_questions_showed" />
+        <TextView
+            style="@style/ContentLabel"
+            android:text="@string/detail_questions_answered" />
+        <TextView
+            style="@style/ContentLabel"
+            android:text="@string/detail_facts_read" />
+        <TextView
+            style="@style/ContentLabel"
+            android:text="@string/detail_matches_played" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
