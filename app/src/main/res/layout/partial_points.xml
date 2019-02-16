@@ -41,7 +41,7 @@
 
             <Button
                 style="@style/Button"
-                android:id="@+id/btn_points"
+                android:id="@+id/btn_see_all"
                 android:text="@string/action_see_all"/>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
