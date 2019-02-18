@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.model.entity;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
@@ -9,6 +10,7 @@ import java.util.Date;
 public class Score {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id_score")
     private long idScore;
     private int points;
     private Date date;

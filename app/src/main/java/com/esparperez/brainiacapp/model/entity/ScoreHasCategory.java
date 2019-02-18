@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.model.entity;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 
@@ -18,7 +19,9 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
                     onDelete = CASCADE),
         })
 public class ScoreHasCategory {
+    @ColumnInfo(name = "id_score")
     private long idScore;
+    @ColumnInfo(name = "id_category")
     private long idCategory;
 
     public ScoreHasCategory(long idScore, long idCategory) {

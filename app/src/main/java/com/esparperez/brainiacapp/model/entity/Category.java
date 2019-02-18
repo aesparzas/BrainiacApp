@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.model.entity;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
@@ -7,6 +8,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class Category {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id_category")
     private long idCategory;
     private String name;
     private String description;

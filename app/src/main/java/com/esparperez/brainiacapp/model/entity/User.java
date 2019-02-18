@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.model.entity;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
@@ -10,23 +11,30 @@ import java.util.Date;
 public class User {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id_user")
     private long idUser;
     private String name;
-    private Date registerDate;
+    @ColumnInfo(name = "registration_date")
+    private Date registrationDate;
+    @ColumnInfo(name = "profile_image_resource")
     private int profileImageResource;
 
+    @ColumnInfo(name = "answered_correctly")
     private int answeredCorrectly;
+    @ColumnInfo(name = "questions_showed")
     private int questionsShowed;
+    @ColumnInfo(name = "facts_read")
     private int factsRead;
+    @ColumnInfo(name = "matches_played")
     private int matchesPlayed;
 
     public User() {
     }
 
-    public User(long idUser, String name, Date registerDate, int profileImageResource, int answeredCorrectly, int questionsShowed, int factsRead, int matchesPlayed) {
+    public User(long idUser, String name, Date registrationDate, int profileImageResource, int answeredCorrectly, int questionsShowed, int factsRead, int matchesPlayed) {
         this.idUser = idUser;
         this.name = name;
-        this.registerDate = registerDate;
+        this.registrationDate = registrationDate;
         this.profileImageResource = profileImageResource;
         this.answeredCorrectly = answeredCorrectly;
         this.questionsShowed = questionsShowed;
@@ -50,12 +58,12 @@ public class User {
         this.name = name;
     }
 
-    public Date getRegisterDate() {
-        return registerDate;
+    public Date getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public int getProfileImageResource() {
