@@ -4,6 +4,10 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverter;
+import android.arch.persistence.room.TypeConverters;
+
+import com.esparperez.brainiacapp.model.DateConverter;
 
 import java.util.Date;
 
@@ -14,6 +18,7 @@ public class User {
     @ColumnInfo(name = "id_user")
     private long idUser;
     private String name;
+    @TypeConverters(DateConverter.class)
     @ColumnInfo(name = "registration_date")
     private Date registrationDate;
     @ColumnInfo(name = "profile_image_resource")
@@ -28,10 +33,12 @@ public class User {
     @ColumnInfo(name = "matches_played")
     private int matchesPlayed;
 
+    @Ignore
     public User() {
     }
 
-    public User(long idUser, String name, Date registrationDate, int profileImageResource, int answeredCorrectly, int questionsShowed, int factsRead, int matchesPlayed) {
+    public User(long idUser, String name, Date registrationDate, int profileImageResource,
+                int answeredCorrectly, int questionsShowed, int factsRead, int matchesPlayed) {
         this.idUser = idUser;
         this.name = name;
         this.registrationDate = registrationDate;

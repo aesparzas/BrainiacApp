@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.gameMods.inGame;
+package com.esparperez.brainiacapp.game.inGame;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

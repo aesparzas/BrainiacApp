@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.esparperez.brainiacapp.R;
-import com.esparperez.brainiacapp.model.entity.Category;
+import com.esparperez.brainiacapp.model.entity.Game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,13 +53,13 @@ public class PlayFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(mAdapter);
         // Sólo para prueba
-        List<Category> categories = new ArrayList<>();
+        List<Game> categories = new ArrayList<>();
         for (int i = 0; i<10; i++) {
-            Category category = new Category();
-            category.setName("TestName: " + i);
-            category.setDescription("TestDescription: " + i);
-            category.setImageResource(R.drawable.img_profile_picture);
-            categories.add(category);
+            Game game = new Game();
+            game.setName("TestName: " + i);
+            game.setDescription("TestDescription: " + i);
+            game.setImageResource(R.drawable.img_profile_picture);
+            categories.add(game);
         }
         mAdapter.setValues(categories);
     }

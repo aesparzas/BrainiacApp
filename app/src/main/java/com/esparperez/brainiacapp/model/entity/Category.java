@@ -10,23 +10,19 @@ public class Category {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_category")
     private long idCategory;
+    @ColumnInfo(name = "name")
     private String name;
-    private String description;
-    private int imageResource;
 
-    public Category() {}
-
-    public Category(String name, String description, int imageResource) {
+    public Category(long idCategory, String name) {
+        this.idCategory = idCategory;
         this.name = name;
-        this.description = description;
-        this.imageResource = imageResource;
     }
 
     public long getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(int idCategory) {
+    public void setIdCategory(long idCategory) {
         this.idCategory = idCategory;
     }
 
@@ -36,21 +32,5 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getImageResource() {
-        return imageResource;
-    }
-
-    public void setImageResource(int imageResource) {
-        this.imageResource = imageResource;
     }
 }

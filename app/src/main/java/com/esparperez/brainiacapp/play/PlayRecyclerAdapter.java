@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.esparperez.brainiacapp.R;
-import com.esparperez.brainiacapp.model.entity.Category;
+import com.esparperez.brainiacapp.model.entity.Game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class PlayRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private Context mContext;
-    private List<Category> mValues;
+    private List<Game> mValues;
 
     @NonNull
     @Override
@@ -42,13 +42,13 @@ public class PlayRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         CategoryHolder holder = (CategoryHolder) viewHolder;
-        Category itemCategory = mValues.get(i);
+        Game itemGame = mValues.get(i);
         Glide
                 .with(mContext)
-                .load(itemCategory.getImageResource())
+                .load(itemGame.getImageResource())
                 .into(holder.ivCategory);
-        holder.tvTitle.setText(itemCategory.getName());
-        holder.tvDescription.setText(itemCategory.getDescription());
+        holder.tvTitle.setText(itemGame.getName());
+        holder.tvDescription.setText(itemGame.getDescription());
     }
 
     @Override
@@ -56,7 +56,7 @@ public class PlayRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return mValues.size();
     }
 
-    public void setValues(List<Category> values) {
+    public void setValues(List<Game> values) {
         mValues = values;
         notifyDataSetChanged();
     }

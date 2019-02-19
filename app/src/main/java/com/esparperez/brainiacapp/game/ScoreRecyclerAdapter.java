@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.gameMods;
+package com.esparperez.brainiacapp.game;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
