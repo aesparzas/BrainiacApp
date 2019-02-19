@@ -15,10 +15,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.esparperez.brainiacapp.myStats.MyStatsFragment;
+import com.esparperez.brainiacapp.play.PlayFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,19 +64,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+        String test = "";
+        switch (menuItem.getItemId()) {
+            case R.id.menu_statistics:
+                test = getString(R.string.title_nav_drawer_statistics);
+                break;
+            case R.id.menu_play_mode:
+                test = getString(R.string.title_nav_drawer_play_modes);
+                break;
+            case R.id.menu_upcoming:
+                test = getString(R.string.title_nav_drawer_upcoming);
+                break;
+            case R.id.menu_terms:
+                test = getString(R.string.title_nav_drawer_terms_and_conditions);
+                break;
+            case R.id.menu_configurations:
+                test = getString(R.string.title_nav_drawer_configurations);
+                break;
+            case R.id.menu_about:
+                test = getString(R.string.title_nav_drawer_about);
+                break;
+        }
+        drawerLayout.closeDrawer(Gravity.START);
+        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
+        // TODO inflar el respectivo fragment
+        return true;
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        Fragment fragment = new TestFragment().newInstance();
-        adapter.addFragment(fragment, "TEST");
+        adapter.addFragment(new PlayFragment().newInstance(), getString(R.string.title_tab_play));
+        adapter.addFragment(new MyStatsFragment().newInstance(),getString(R.string.title_tab_stats));
+        adapter.addFragment(new MyStatsFragment().newInstance(),getString(R.string.title_tab_categories));
         viewPager.setAdapter(adapter);
     }
 

@@ -24,9 +24,9 @@
     <string name="title_cv_roulette">Roulette</string>
     <string name="description_cv_roulette">Random questions of random categories. Prove you are a know-it-all</string>
     <string name="title_cv_subject">Subject</string>
-    <string name="description_cv_subject">Random questions of one category. So you can master one subject</string>
+    <string name="description_cv_subject">Random questions of one game. So you can master one subject</string>
     <string name="title_cv_fact">Fact</string>
-    <string name="description_cv_fact">Read about your favourite category. One new per day</string>
+    <string name="description_cv_fact">Read about your favourite game. One new per day</string>
     <string name="action_configure">CONFIGURE</string>
 
     <!-- CardView Details -->

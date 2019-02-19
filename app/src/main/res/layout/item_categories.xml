@@ -48,7 +48,7 @@
             app:layout_constraintGuide_percent="0.5" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_category"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/shape_item_play_imgv"
