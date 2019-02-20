@@ -15,8 +15,11 @@ import java.util.Date;
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "score",
-        indices = @Index("id_game"),
         foreignKeys = {
+                @ForeignKey(entity = User.class,
+                        parentColumns = "id_user",
+                        childColumns = "id_user",
+                        onDelete = CASCADE),
                 @ForeignKey(entity = Game.class,
                         parentColumns = "id_game",
                         childColumns = "id_game",
@@ -32,17 +35,28 @@ public class Score {
     @ColumnInfo(name = "date")
     @TypeConverters(DateConverter.class)
     private Date date;
+    @ColumnInfo(name = "id_user")
+    private long idUser;
     @ColumnInfo(name = "id_game")
     private long idGame;
 
     @Ignore
     public Score() {}
 
-    public Score(long idScore, int points, Date date, long idGame) {
+    public Score(long idScore, int points, Date date, long idUser, long idGame) {
         this.idScore = idScore;
         this.points = points;
         this.date = date;
+        this.idUser = idUser;
         this.idGame = idGame;
+    }
+
+    public long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(long idUser) {
+        this.idUser = idUser;
     }
 
     public long getIdScore() {

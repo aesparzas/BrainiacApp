@@ -29,10 +29,4 @@ public interface UserDao {
 
     @Query("SELECT * FROM User WHERE id_user = :id_user")
     User getById(int id_user);
-
-    @Query("SELECT * FROM user AS u" +
-            " JOIN userPlaysGame AS upg ON u.id_user = upg.id_user" +
-            " JOIN score AS s ON upg.id_game = s.id_game" +
-            " WHERE u.id_user =:idUser")
-    List<User> getUsersScores(final long idUser);
 }

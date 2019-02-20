@@ -7,7 +7,7 @@ import android.arch.persistence.room.Index;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "categoryHasScore",
+@Entity(tableName = "ScoreHasCategory",
         indices = @Index("id_score"),
         primaryKeys = {"id_category", "id_score"},
         foreignKeys = {
@@ -20,13 +20,13 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
                         childColumns = "id_score",
                         onDelete = CASCADE)
         })
-public class CategoryHasScore {
+public class ScoreHasCategory {
     @ColumnInfo(name = "id_category")
     private long idCategory;
     @ColumnInfo(name = "id_score")
     private long idScore;
 
-    public CategoryHasScore(long idCategory, long idScore) {
+    public ScoreHasCategory(long idCategory, long idScore) {
         this.idCategory = idCategory;
         this.idScore = idScore;
     }
