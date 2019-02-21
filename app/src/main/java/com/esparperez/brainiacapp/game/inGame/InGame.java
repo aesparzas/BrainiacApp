@@ -49,6 +49,5 @@ public class InGame extends Fragment {
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.app_bar_tab_layout).setVisible(false);
     }
 }

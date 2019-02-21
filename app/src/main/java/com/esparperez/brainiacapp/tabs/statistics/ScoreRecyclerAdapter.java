@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.game;
+package com.esparperez.brainiacapp.tabs.statistics;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

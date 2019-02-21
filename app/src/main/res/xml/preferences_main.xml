@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="@string/key_settings_roulette"
+        android:title="@string/title_category_roulette"/>
+
+    <Preference
+        android:key="@string/key_settings_subject"
+        android:title="@string/title_category_subject"/>
+
+    <Preference
+        android:key="@string/key_settings_fact"
+        android:title="@string/title_category_fact"/>
+
+</PreferenceScreen>

@@ -56,4 +56,7 @@
     <string name="question_test">Where was Wolfgang Amadeus Mozart born on January 27th 1756?</string>
     <string name="action_option">Viena, Austria</string>
     <string name="test_player_name">Player Name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

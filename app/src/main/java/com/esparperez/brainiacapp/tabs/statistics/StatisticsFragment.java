@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.myStats;
+package com.esparperez.brainiacapp.tabs.statistics;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,11 +16,11 @@ import com.esparperez.brainiacapp.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyStatsFragment extends Fragment {
+public class StatisticsFragment extends Fragment {
 
-    public MyStatsFragment() {}
-    public MyStatsFragment newInstance() {
-        MyStatsFragment fragment = new MyStatsFragment();
+    public StatisticsFragment() {}
+    public StatisticsFragment newInstance() {
+        StatisticsFragment fragment = new StatisticsFragment();
         return fragment;
     }
 
@@ -41,7 +41,7 @@ public class MyStatsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_my_stats, container, false);
+        View view = inflater.inflate(R.layout.fragment_statistics, container, false);
         ButterKnife.bind(this, view);
         return view;
     }

@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.play;
+package com.esparperez.brainiacapp.tabs.play;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.esparperez.brainiacapp.R;
 import com.esparperez.brainiacapp.model.entity.Game;
+import com.esparperez.brainiacapp.tabs.CategoryAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class PlayFragment extends Fragment {
     @BindView(R.id.recycler_play)
     RecyclerView recyclerView;
 
-    private PlayRecyclerAdapter mAdapter;
+    private CategoryAdapter mAdapter;
 
     @Nullable
     @Override
@@ -48,16 +49,21 @@ public class PlayFragment extends Fragment {
     }
 
     private void setupRecycler() {
-        if (mAdapter == null) mAdapter = new PlayRecyclerAdapter(getContext());
+        if (mAdapter == null) mAdapter = new CategoryAdapter(getContext());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(mAdapter);
+
         // Sólo para prueba
         List<Game> categories = new ArrayList<>();
-        for (int i = 0; i<10; i++) {
+        String [] arrTitle = {getString(R.string.title_cv_roulette),
+                getString(R.string.title_cv_subject), getString(R.string.title_cv_fact)};
+        String [] arrDesc = {getString(R.string.description_cv_roulette),
+                getString(R.string.description_cv_subject),getString(R.string.description_cv_fact)};
+        for (int i = 0; i < arrTitle.length; i++) {
             Game game = new Game();
-            game.setName("TestName: " + i);
-            game.setDescription("TestDescription: " + i);
+            game.setName(arrTitle[i]);
+            game.setDescription(arrDesc[i]);
             game.setImageResource(R.drawable.img_profile_picture);
             categories.add(game);
         }

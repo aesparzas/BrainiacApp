@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Preferences -->
+    <string name="title_preference_activity">Configurations</string>
+    <string name="title_category_roulette">Roulette</string>
+    <string name="title_category_subject">Subject</string>
+    <string name="title_category_fact">Fact</string>
+
+    <string name="title_cat_anime">Anime</string>
+    <string name="title_cat_book">Books</string>
+    <string name="title_cat_movie">Movies</string>
+    <string name="title_cat_music">Music</string>
+    <string name="title_cat_tv">Television</string>
+
+    <!-- Keys -->
+    <string name="key_settings_roulette">key_roulette</string>
+    <string name="key_settings_subject">key_subject</string>
+    <string name="key_settings_fact">key_fact</string>
+
+    <string name="key_switch_anime">key_anime</string>
+    <string name="key_switch_book">key_book</string>
+    <string name="key_switch_movie">key_movie</string>
+    <string name="key_switch_music">key_music</string>
+    <string name="key_switch_tv">key_tv</string>
+
+
+</resources>

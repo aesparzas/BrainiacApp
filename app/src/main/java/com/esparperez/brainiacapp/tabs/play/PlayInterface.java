@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.play;
+package com.esparperez.brainiacapp.tabs.play;
 
 public interface PlayInterface {
 
