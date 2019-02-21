@@ -18,12 +18,9 @@ import butterknife.ButterKnife;
 
 public class InGame extends Fragment {
 
-    public InGame() { }
+    private static final String ARG_GAME_MODE = "gameMode";
 
-    public InGame newInstance() {
-        InGame fragment = newInstance();
-        return fragment;
-    }
+    private int mGameMode;
 
     @BindView(R.id.tv_category_title)
     TextView tvCategoryName;
@@ -32,15 +29,28 @@ public class InGame extends Fragment {
     @BindView(R.id.radio_group)
     RadioGroup radioGroup;
 
+    public InGame() { }
+
+    public InGame newInstance(int gameMode) {
+        InGame fragment = new InGame();
+        Bundle args = new Bundle();
+        args.putInt(ARG_GAME_MODE, gameMode);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if (getArguments() != null) {
+            mGameMode = getArguments().getInt(ARG_GAME_MODE);
+        }
     }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_in_game, container, false);
         ButterKnife.bind(this, view);
         return view;

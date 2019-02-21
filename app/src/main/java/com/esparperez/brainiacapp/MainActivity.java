@@ -27,13 +27,8 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawerLayout;
     @BindView(R.id.nav_main)
     NavigationView navigationView;
-//    @BindView(R.id.view_pager)
-//    ViewPager viewPager;
-//    @BindView(R.id.tab_layout)
-//    TabLayout tabLayout;
 
     private ActionBarDrawerToggle mToggle;
-//    private ViewPagerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +42,8 @@ public class MainActivity extends AppCompatActivity
         mToggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-//        setupViewPager(viewPager);
-//        tabLayout.setupWithViewPager(viewPager);
+        Fragment fragment = TabsContainerFragment.newInstance();
+        inflateFragment(fragment);
     }
 
     @Override
@@ -80,73 +75,15 @@ public class MainActivity extends AppCompatActivity
             inflateFragment(fragment);
         }
         drawerLayout.closeDrawer(Gravity.START);
-//        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
-        // TODO inflar el respectivo fragment
         return true;
     }
 
-//    private void setupViewPager(ViewPager viewPager) {
-//        mAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-//        mAdapter.addFragment(new PlayFragment().newInstance(), getString(R.string.title_tab_play));
-//        mAdapter.addFragment(new StatisticsFragment().newInstance(),getString(R.string.title_tab_stats));
-//        mAdapter.addFragment(new StatisticsFragment().newInstance(),getString(R.string.title_tab_categories));
-//        viewPager.setAdapter(mAdapter);
-//    }
-
-//    private void inflateTab(int position) {
-//        if (mAdapter == null) setupViewPager(viewPager);
-//        if (tabLayout.getVisibility() == View.GONE) tabLayout.setVisibility(View.VISIBLE);
-//        viewPager.setAdapter(mAdapter);
-//        viewPager.setCurrentItem(position);
-////        tabLayout.setVisibility(tabLayout.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-//
-//    }
 
     private void inflateFragment(Fragment fragment) {
-//        tabLayout.setVisibility(View.GONE);
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
                 .replace(R.id.main_cointainer, fragment)
                 .addToBackStack(null)
                 .commit();
     }
-
-    /*
-     * Se usa un FragmentPagerAdapter puesto que se requiere que cada pestaña
-     * del TabLayout contenga un fragment y el número de estas es bajo, en caso
-     * de tener un número muy grande de pestañas se usaría
-     * FragmentStatePagerAdapter, ya que el primero mantiene en la memoria
-     * los fragments abiertos de cada pestaña.
-     */
-
-//    static class ViewPagerAdapter extends FragmentPagerAdapter {
-//
-//        private List<Fragment> mFragmentList = new ArrayList<>();
-//        private List<String> mFragmentTitleList = new ArrayList<>();
-//
-//        public ViewPagerAdapter(FragmentManager fm) {
-//            super(fm);
-//        }
-//
-//        @Override
-//        public Fragment getItem(int i) {
-//            return mFragmentList.get(i);
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return mFragmentList.size();
-//        }
-//
-//        @Nullable
-//        @Override
-//        public CharSequence getPageTitle(int position) {
-//            return mFragmentTitleList.get(position);
-//        }
-//
-//        public void addFragment(Fragment fragment, String title) {
-//            mFragmentList.add(fragment);
-//            mFragmentTitleList.add(title);
-//        }
-//    }
 }

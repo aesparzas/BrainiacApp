@@ -12,7 +12,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/linear_points">
             <TextView
                 style="@style/ContentLabelLight"
                 android:text="@string/title_points" />
@@ -21,24 +22,29 @@
                 android:text="@string/subtitle_date" />
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_points"
+        <LinearLayout
+            android:id="@+id/linear_points"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/margin_padding_size_medium"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linear_item_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/cv_footer"/>
+            app:layout_constraintBottom_toTopOf="@id/cv_footer">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_points"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_medium" />
+        </LinearLayout>
+
 
         <LinearLayout
             style="@style/CardViewFooter"
             android:id="@+id/cv_footer"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recycler_points"
+            app:layout_constraintTop_toBottomOf="@id/linear_points"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-
             <Button
                 style="@style/Button"
                 android:id="@+id/btn_see_all"

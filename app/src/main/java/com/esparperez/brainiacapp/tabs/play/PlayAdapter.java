@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.tabs;
+package com.esparperez.brainiacapp.tabs.play;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -21,9 +21,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public CategoryAdapter(Context context) {
+    public PlayAdapter(Context context) {
         mValues = new ArrayList<>();
         this.mContext = context;
     }
@@ -36,12 +36,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.item_categories,viewGroup,false);
-        return new CategoryHolder(view);
+        return new PlayHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        CategoryHolder holder = (CategoryHolder) viewHolder;
+        PlayHolder holder = (PlayHolder) viewHolder;
         Game itemGame = mValues.get(i);
         Glide
                 .with(mContext)
@@ -61,7 +61,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         notifyDataSetChanged();
     }
 
-    static class CategoryHolder extends RecyclerView.ViewHolder {
+    static class PlayHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.tv_item_title)
         TextView tvTitle;
@@ -83,7 +83,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         @BindView(R.id.iv_category)
         ImageView ivCategory;
 
-        public CategoryHolder(@NonNull View itemView) {
+        public PlayHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

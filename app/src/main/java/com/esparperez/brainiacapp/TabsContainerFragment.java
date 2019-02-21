@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.esparperez.brainiacapp.tabs.categories.CategoriesFragment;
 import com.esparperez.brainiacapp.tabs.play.PlayFragment;
 import com.esparperez.brainiacapp.tabs.statistics.StatisticsFragment;
 
@@ -50,11 +51,19 @@ public class TabsContainerFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         mAdapter = new ViewPagerAdapter(getChildFragmentManager());
-        mAdapter.addFragment(new PlayFragment().newInstance(), getString(R.string.title_tab_play));
-        mAdapter.addFragment(new StatisticsFragment().newInstance(),getString(R.string.title_tab_stats));
-        mAdapter.addFragment(new StatisticsFragment().newInstance(),getString(R.string.title_tab_categories));
+        mAdapter.addFragment(PlayFragment.newInstance(), getString(R.string.title_tab_play));
+        mAdapter.addFragment(StatisticsFragment.newInstance(),getString(R.string.title_tab_stats));
+        mAdapter.addFragment(CategoriesFragment.newInstance(),getString(R.string.title_tab_categories));
         viewPager.setAdapter(mAdapter);
     }
+
+    /*
+     * Se usa un FragmentPagerAdapter puesto que se requiere que cada pestaña
+     * del TabLayout contenga un fragment y el número de estas es bajo, en caso
+     * de tener un número muy grande de pestañas se usaría
+     * FragmentStatePagerAdapter, ya que el primero mantiene en la memoria
+     * los fragments abiertos de cada pestaña.
+     */
 
     static class ViewPagerAdapter extends FragmentPagerAdapter {
 

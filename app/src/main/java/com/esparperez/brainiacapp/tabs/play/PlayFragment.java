@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.esparperez.brainiacapp.R;
 import com.esparperez.brainiacapp.model.entity.Game;
-import com.esparperez.brainiacapp.tabs.CategoryAdapter;
+import com.esparperez.brainiacapp.tabs.categories.CategoryTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +24,14 @@ public class PlayFragment extends Fragment {
 
     public PlayFragment() {}
 
-    public PlayFragment newInstance() {
+    public static PlayFragment newInstance() {
         PlayFragment fragment = new PlayFragment();
         return fragment;
     }
     @BindView(R.id.recycler_play)
     RecyclerView recyclerView;
 
-    private CategoryAdapter mAdapter;
+    private PlayAdapter mAdapter;
 
     @Nullable
     @Override
@@ -39,17 +39,17 @@ public class PlayFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_play, container,false);
         ButterKnife.bind(this, view);
+        setupRecycler();
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        setupRecycler();
     }
 
     private void setupRecycler() {
-        if (mAdapter == null) mAdapter = new CategoryAdapter(getContext());
+        if (mAdapter == null) mAdapter = new PlayAdapter(getContext());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(mAdapter);

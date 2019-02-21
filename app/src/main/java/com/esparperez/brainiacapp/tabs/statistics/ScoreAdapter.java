@@ -16,11 +16,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ScoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    public ScoreRecyclerAdapter() {
+public class ScoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    public ScoreAdapter() {
         this.mValues = new ArrayList<>();
     }
-    List<Score> mValues;
+    List<PointsTest> mValues;
 
     @NonNull
     @Override
@@ -33,8 +33,10 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         PointsHolder holder = (PointsHolder) viewHolder;
-        Score itemStatistics = mValues.get(i);
+        PointsTest item = mValues.get(i);
 
+        holder.tvPoints.setText(String.valueOf(item.getPoints()));
+        holder.tvDate.setText(item.getDate().toString());
     }
 
     @Override
@@ -42,7 +44,7 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
         return mValues.size();
     }
 
-    public void setValues(List<Score> values) {
+    public void setValues(List<PointsTest> values) {
         mValues = values;
         notifyDataSetChanged();
     }
