@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 
+import com.esparperez.brainiacapp.preferences.ConfigurationActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     private static int PLAY_MODES_TAB_POSITION = 0;
     private static int STATISTICS_TAB_POSITION = 1;
 
-    @BindView(R.id.app_bar_toolbar)
+    @BindView(R.id.main_toolbar)
     Toolbar toolbar;
     @BindView(R.id.drawer_main)
     DrawerLayout drawerLayout;
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity
                 fragment = TermsFragment.newInstance();
                 break;
             case R.id.menu_configurations:
-                fragment = TestFragment.newInstance();
+                Intent intent = new Intent(this, ConfigurationActivity.class);
+                startActivity(intent);
                 break;
             case R.id.menu_about:
                 fragment = AboutFragment.newInstance();

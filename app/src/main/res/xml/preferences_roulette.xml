@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <PreferenceCategory
         android:key="@string/key_settings_roulette"
         android:title="@string/title_category_roulette">
 
         <CheckBoxPreference
-            android:key="@string/key_switch_anime"
+            android:key="@string/key_switch_anime_r"
             android:title="@string/title_cat_anime"/>
 
         <CheckBoxPreference
-            android:key="@string/key_switch_book"
+            android:key="@string/key_switch_book_r"
             android:title="@string/title_cat_book"/>
 
         <CheckBoxPreference
-            android:key="@string/key_switch_movie"
+            android:key="@string/key_switch_movie_r"
             android:title="@string/title_cat_movie"/>
 
         <CheckBoxPreference
-            android:key="@string/key_switch_music"
+            android:key="@string/key_switch_music_r"
             android:title="@string/title_cat_music"/>
 
         <CheckBoxPreference
-            android:key="@string/key_switch_tv"
+            android:key="@string/key_switch_tv_r"
             android:title="@string/title_cat_tv"/>
-
     </PreferenceCategory>
-
 </PreferenceScreen>

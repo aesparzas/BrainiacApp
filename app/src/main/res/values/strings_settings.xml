@@ -17,11 +17,23 @@
     <string name="key_settings_subject">key_subject</string>
     <string name="key_settings_fact">key_fact</string>
 
-    <string name="key_switch_anime">key_anime</string>
-    <string name="key_switch_book">key_book</string>
-    <string name="key_switch_movie">key_movie</string>
-    <string name="key_switch_music">key_music</string>
-    <string name="key_switch_tv">key_tv</string>
+    <string name="key_switch_anime_r">key_anime</string>
+    <string name="key_switch_book_r">key_book</string>
+    <string name="key_switch_movie_r">key_movie</string>
+    <string name="key_switch_music_r">key_music</string>
+    <string name="key_switch_tv_r">key_tv</string>
+
+    <string name="key_switch_anime_s">key_anime</string>
+    <string name="key_switch_book_s">key_book</string>
+    <string name="key_switch_movie_s">key_movie</string>
+    <string name="key_switch_music_s">key_music</string>
+    <string name="key_switch_tv_s">key_tv</string>
+
+    <string name="key_switch_anime_f">key_anime</string>
+    <string name="key_switch_book_f">key_book</string>
+    <string name="key_switch_movie_f">key_movie</string>
+    <string name="key_switch_music_f">key_music</string>
+    <string name="key_switch_tv_f">key_tv</string>
 
 
 </resources>

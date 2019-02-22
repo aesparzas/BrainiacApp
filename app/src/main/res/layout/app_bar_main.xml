@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         app:elevation="0dp">
         <android.support.v7.widget.Toolbar
-            android:id="@+id/app_bar_toolbar"
+            android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/colorAccentText"
