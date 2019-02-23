@@ -1,13 +1,9 @@
-package com.esparperez.brainiacapp.game.inGame;
+package com.esparperez.brainiacapp.game;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -20,12 +16,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class InGame extends Fragment implements InGameInterface.InGameView {
+public class InGameActivity extends AppCompatActivity implements InGameInterface.InGameView {
 
-    private static final String ARG_GAME_MODE = "gameMode";
+    private static final String GAME_MODE = "gameMode";
 
-    private int mGameMode;
     private InGameInterface.InGamePresenter mPresenter;
+    private int mGameMode;
 
     @BindView(R.id.tv_category_title)
     TextView tvCategoryName;
@@ -43,33 +39,22 @@ public class InGame extends Fragment implements InGameInterface.InGameView {
     RadioButton radioOption4;
     @BindView(R.id.btn_answer)
     Button btnAnswer;
+    @BindView(R.id.in_game_toolbar)
+    Toolbar toolbar;
 
-    public InGame() {}
-
-    public InGame newInstance(int gameMode) {
-        InGame fragment = new InGame();
-        Bundle args = new Bundle();
-        args.putInt(ARG_GAME_MODE, gameMode);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    public InGameActivity() {}
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mGameMode = getArguments().getInt(ARG_GAME_MODE);
+        setContentView(R.layout.activity_in_game);
+        ButterKnife.bind(this);
+        if (getIntent() != null) {
+            mGameMode = getIntent().getIntExtra(GAME_MODE,-1);
         }
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_in_game, container, false);
-        ButterKnife.bind(this, view);
-        mPresenter.getQuestion(mGameMode);
-        return view;
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
@@ -106,7 +91,7 @@ public class InGame extends Fragment implements InGameInterface.InGameView {
 
     @Override
     public void showAnswer(String answer) {
-        Toast.makeText(getContext(), answer, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, answer, Toast.LENGTH_SHORT).show();
     }
 
     @Override

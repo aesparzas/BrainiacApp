@@ -8,21 +8,28 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <android.support.v7.widget.Toolbar
-            android:id="@+id/config_toolbar"
+            android:id="@+id/in_game_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.Toolbar>
-
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"/>
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
-        android:id="@+id/settings_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-    </FrameLayout>
+        <include layout="@layout/partial_question"
+            android:id="@+id/partial_q" />
 
+        <LinearLayout
+            style="@style/CardViewTitle"
+            android:layout_gravity="bottom"
+            android:id="@+id/ads">
+            <TextView
+                style="@style/TitleLabel"
+                android:gravity="center_horizontal"
+                android:text="@string/title_ads"/>
+        </LinearLayout>
+    </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>

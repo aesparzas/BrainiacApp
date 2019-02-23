@@ -1,8 +1,8 @@
 package com.esparperez.brainiacapp.tabs.play;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.esparperez.brainiacapp.R;
+import com.esparperez.brainiacapp.game.InGameActivity;
 import com.esparperez.brainiacapp.model.entity.Game;
+import com.esparperez.brainiacapp.preferences.ConfigurationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,15 +23,19 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.esparperez.brainiacapp.Constants.SCREEN_TAG;
+import static com.esparperez.brainiacapp.Constants.SCREEN_TITLE;
+
 public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private static final String GAME_MODE = "game_mode";
+    private Context mContext;
+    private List<Game> mValues;
 
     public PlayAdapter(Context context) {
         mValues = new ArrayList<>();
         this.mContext = context;
     }
-
-    private Context mContext;
-    private List<Game> mValues;
 
     @NonNull
     @Override
@@ -40,8 +46,8 @@ public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        PlayHolder holder = (PlayHolder) viewHolder;
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
+        final PlayHolder holder = (PlayHolder) viewHolder;
         Game itemGame = mValues.get(i);
         Glide
                 .with(mContext)
@@ -49,6 +55,14 @@ public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 .into(holder.ivCategory);
         holder.tvTitle.setText(itemGame.getName());
         holder.tvDescription.setText(itemGame.getDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, InGameActivity.class);
+                intent.putExtra(GAME_MODE, i);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -68,17 +82,29 @@ public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         @BindView(R.id.tv_item_description)
         TextView tvDescription;
         @OnClick(R.id.btn_item)
+
         void click() {
             int position = getAdapterPosition();
-            Fragment fragment = null;
+            String preferenceScreen = null;
+            String preferenceTitle = null;
             switch (position) {
                 case 0 :
+                    preferenceScreen = itemView.getContext().getString(R.string.key_settings_roulette);
+                    preferenceTitle = itemView.getContext().getString(R.string.key_settings_roulette);
                     break;
                 case 1:
+                    preferenceScreen = itemView.getContext().getString(R.string.key_settings_subject);
+                    preferenceTitle = itemView.getContext().getString(R.string.key_settings_subject);
                     break;
                 case 2:
+                    preferenceScreen = itemView.getContext().getString(R.string.key_settings_fact);
+                    preferenceTitle = itemView.getContext().getString(R.string.key_settings_fact);
                     break;
             }
+            Intent intent = new Intent(itemView.getContext(), ConfigurationActivity.class);
+            intent.putExtra(SCREEN_TAG, preferenceScreen);
+            intent.putExtra(SCREEN_TITLE, preferenceTitle);
+            itemView.getContext().startActivity(intent);
         }
         @BindView(R.id.iv_category)
         ImageView ivCategory;

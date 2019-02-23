@@ -13,6 +13,7 @@
     <string name="title_cat_tv">Television</string>
 
     <!-- Keys -->
+    <string name="key_settings_main">key_main</string>
     <string name="key_settings_roulette">key_roulette</string>
     <string name="key_settings_subject">key_subject</string>
     <string name="key_settings_fact">key_fact</string>

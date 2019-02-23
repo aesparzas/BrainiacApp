@@ -6,6 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">
+            @style/customPreferenceTheme
+        </item>
+    </style>
+
+    <style name="customPreferenceTheme" parent="PreferenceThemeOverlay.v14.Material">
+        <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
     <style name="BaseConstraint">

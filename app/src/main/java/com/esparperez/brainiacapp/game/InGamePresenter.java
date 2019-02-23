@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp.game.inGame;
+package com.esparperez.brainiacapp.game;
 
 public class InGamePresenter implements InGameInterface.InGamePresenter, InGameInterface.InGameListener {
 

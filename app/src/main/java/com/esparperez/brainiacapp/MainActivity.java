@@ -18,11 +18,11 @@ import com.esparperez.brainiacapp.preferences.ConfigurationActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.esparperez.brainiacapp.Constants.SCREEN_TAG;
+import static com.esparperez.brainiacapp.Constants.SCREEN_TITLE;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private static int PLAY_MODES_TAB_POSITION = 0;
-    private static int STATISTICS_TAB_POSITION = 1;
 
     @BindView(R.id.main_toolbar)
     Toolbar toolbar;
@@ -54,11 +54,9 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         switch (menuItem.getItemId()) {
             case R.id.menu_statistics:
-//                inflateTab(STATISTICS_TAB_POSITION);
                 fragment = TabsContainerFragment.newInstance();
                 break;
             case R.id.menu_play_mode:
-//                inflateTab(PLAY_MODES_TAB_POSITION);
                 fragment = TabsContainerFragment.newInstance();
                 break;
             case R.id.menu_upcoming:
@@ -69,6 +67,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.menu_configurations:
                 Intent intent = new Intent(this, ConfigurationActivity.class);
+                intent.putExtra(SCREEN_TAG, getString(R.string.key_settings_main));
+                intent.putExtra(SCREEN_TITLE, getString(R.string.key_settings_main));
                 startActivity(intent);
                 break;
             case R.id.menu_about:
