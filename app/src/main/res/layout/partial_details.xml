@@ -6,7 +6,7 @@
     android:padding="@dimen/margin_padding_size_medium">
 
         <TextView
-            style="@style/TitleLabelDark"
+            style="@style/TitleLabel"
             android:id="@+id/tv_item_desc_title"
             android:text="@string/title_description"
             app:layout_constraintStart_toStartOf="parent"

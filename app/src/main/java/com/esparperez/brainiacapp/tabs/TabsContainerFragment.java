@@ -1,4 +1,4 @@
-package com.esparperez.brainiacapp;
+package com.esparperez.brainiacapp.tabs;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,7 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.esparperez.brainiacapp.tabs.categories.CategoriesFragment;
+import com.esparperez.brainiacapp.R;
+import com.esparperez.brainiacapp.tabs.categories.CategoryFragment;
 import com.esparperez.brainiacapp.tabs.play.PlayFragment;
 import com.esparperez.brainiacapp.tabs.statistics.StatisticsFragment;
 
@@ -53,7 +54,7 @@ public class TabsContainerFragment extends Fragment {
         mAdapter = new ViewPagerAdapter(getChildFragmentManager());
         mAdapter.addFragment(PlayFragment.newInstance(), getString(R.string.title_tab_play));
         mAdapter.addFragment(StatisticsFragment.newInstance(),getString(R.string.title_tab_stats));
-        mAdapter.addFragment(CategoriesFragment.newInstance(),getString(R.string.title_tab_categories));
+        mAdapter.addFragment(CategoryFragment.newInstance(),getString(R.string.title_tab_categories));
         viewPager.setAdapter(mAdapter);
     }
 

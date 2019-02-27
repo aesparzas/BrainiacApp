@@ -7,7 +7,6 @@
 
     <android.support.constraint.ConstraintLayout
         style="@style/BaseConstraint">
-
         <LinearLayout
             style="@style/CardViewTitle"
             android:id="@+id/linear_question_title"
@@ -17,12 +16,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
-
             <TextView
                 style="@style/TitleLabel"
                 android:id="@+id/tv_category_title"
                 android:text="@string/app_name" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -34,7 +31,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linear_question_title"
             app:layout_constraintEnd_toEndOf="parent">
-
             <TextView
                 style="@style/ContentLabel"
                 android:id="@+id/tv_question"
@@ -42,9 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_padding_size_medium"
                 android:text="@string/question_test" />
-
             <include layout="@layout/view_divider"/>
-
             <RadioGroup
                 style="@style/RadioGroup"
                 android:id="@+id/radio_group"

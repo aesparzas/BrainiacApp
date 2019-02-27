@@ -3,25 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/margin_padding_size_medium">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_item_points"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/margin_padding_size_medium">
-        <TextView
-            android:id="@+id/tv_item_points"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/score_points" />
-        <TextView
-            android:id="@+id/tv_item_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/test_date"
-            android:textColor="@color/colorBackground"/>
-    </LinearLayout>
+        android:text="@string/score_points" />
+    <TextView
+        android:id="@+id/tv_item_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_date"
+        android:textColor="@color/colorBackground"/>
 
-    <include layout="@layout/view_divider"/>
+    <!--<include layout="@layout/view_divider"/>-->
 </LinearLayout>

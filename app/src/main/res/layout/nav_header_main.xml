@@ -36,19 +36,19 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            style="@style/ContentLabelLight"
+            style="@style/ContentLabel.Light"
             android:id="@+id/tv_nav_header_player_name"
             android:layout_gravity="top"
             android:text="@string/test_player_name" />
 
         <TextView
-            style="@style/ContentLabelLight"
+            style="@style/ContentLabel.Light"
             android:id="@+id/tv_nav_header_player_results"
             android:layout_gravity="center_vertical"
             android:text="@string/title_nav_header_results" />
 
         <TextView
-            style="@style/ContentLabelLight"
+            style="@style/ContentLabel.Light"
             android:id="@+id/tv_nav_header_player_register"
             android:layout_gravity="bottom"
             android:text="@string/title_nav_header_registered" />

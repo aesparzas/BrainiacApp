@@ -1,28 +1,26 @@
 package com.esparperez.brainiacapp.tabs.statistics;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.esparperez.brainiacapp.R;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class StatisticsFragment extends Fragment {
+public class StatisticsFragment extends Fragment implements StatisticsInterface.StatisticsView {
 
     public StatisticsFragment() {}
     public static StatisticsFragment newInstance() {
@@ -30,21 +28,24 @@ public class StatisticsFragment extends Fragment {
         return fragment;
     }
 
-    @BindView(R.id.tv_detail_questions)
+    @BindView(R.id.tv_summary_questions)
     TextView tvQuestion;
-    @BindView(R.id.tv_detail_answers)
+    @BindView(R.id.tv_summary_answers)
     TextView tvAnswer;
-    @BindView(R.id.tv_detail_facts)
+    @BindView(R.id.tv_summary_facts)
     TextView tvFact;
-    @BindView(R.id.tv_detail_matches)
+    @BindView(R.id.tv_summary_matches)
     TextView tvMatch;
 
     @BindView(R.id.recycler_points)
     RecyclerView recyclerView;
-    @BindView(R.id.btn_see_all)
-    Button btnSeeAll;
+    @BindView(R.id.tv_subtitle_points)
+    TextView tvPoints;
+    @BindView(R.id.tv_subtitle_date)
+    TextView tvDate;
 
     private ScoreAdapter mAdapter;
+    private StatisticsPresenter mPresenter;
 
     @Nullable
     @Override
@@ -56,21 +57,46 @@ public class StatisticsFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setPresenter();
+        mPresenter.getContent();
+    }
+
+    private void setPresenter() {
+        if (mPresenter == null) {
+            mPresenter = new StatisticsPresenter(this);
+        }
+    }
+
     private void setupRecycler() {
         if (mAdapter == null) mAdapter = new ScoreAdapter();
+        recyclerView.setFocusable(false);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(setContext()));
         recyclerView.setAdapter(mAdapter);
+    }
 
-        List<PointsTest> pointsTestList = new ArrayList<>();
-        for (int i = 0; i<5; i++) {
-            int points = (int) Math.random()*20 + i;
-            Date date = Calendar.getInstance().getTime();
-            PointsTest score = new PointsTest();
-            score.setPoints(points);
-            score.setDate(date);
-            pointsTestList.add(score);
-        }
-        mAdapter.setValues(pointsTestList);
+    @Override
+    public Context setContext() {
+        return getContext();
+    }
+
+    @Override
+    public void showSummaryContent(String totalQuestions, String correctAnswers, String facts, String matches) {
+        tvQuestion.setText(totalQuestions);
+        tvAnswer.setText(correctAnswers);
+        tvFact.setText(facts);
+        tvMatch.setText(matches);
+    }
+
+    @Override
+    public void showPointsContent(String totalPoints, String currentDate, List<PointsTest> points) {
+        tvPoints.setText(totalPoints);
+        tvDate.setText(currentDate);
+        if (mAdapter == null) mAdapter = new ScoreAdapter();
+        mAdapter.setValues(points);
     }
 }

@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.preferences;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,47 +27,50 @@ public class ConfigurationActivity extends AppCompatActivity
     private static final String SCREEN_TAG = "screen_tag";
     private static final String SCREEN_TITLE = "screen_title";
 
+    private String mKey;
+    private String mTitle;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
-        String screen = getIntent().getStringExtra(SCREEN_TAG);
-        String title = getIntent().getStringExtra(SCREEN_TITLE);
         ButterKnife.bind(this);
+        mKey = getIntent().getStringExtra(SCREEN_TAG);
+        mTitle = getIntent().getStringExtra(SCREEN_TITLE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle(title);
-        inflateFragment(screen);
+        inflateFragment(mKey, mTitle);
     }
 
     @Override
     public boolean onPreferenceStartScreen(PreferenceFragmentCompat preferenceFragmentCompat,
                                            PreferenceScreen preferenceScreen) {
-        inflateFragment(preferenceScreen.getKey());
+        inflateFragment(preferenceScreen.getKey(), preferenceScreen.getTitle().toString());
         return false;
     }
 
-    private void inflateFragment(String screenTag) {
-        Fragment fragment = SettingsFragment.newInstance(screenTag);
+    private void inflateFragment(String screenTag, String screenTitle) {
+        Fragment fragment = SettingsFragment.newInstance(screenTag, screenTitle);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.settings_container, fragment)
-                .addToBackStack(getString(R.string.key_settings_main))
+                .addToBackStack(screenTag)
                 .commit();
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
 
-        private static final String SCREEN_TAG = "screen_tag";
         private String mScreen;
+        private String mTitle;
 
         public SettingsFragment() {}
 
-        public static SettingsFragment newInstance(String screenTag) {
+        public static SettingsFragment newInstance(String screenTag, String screenTitle) {
             SettingsFragment fragment = new SettingsFragment();
             Bundle args = new Bundle();
             args.putString(SCREEN_TAG, screenTag);
+            args.putString(SCREEN_TITLE, screenTitle);
             fragment.setArguments(args);
             return fragment;
         }
@@ -74,6 +78,8 @@ public class ConfigurationActivity extends AppCompatActivity
         @Override
         public void onCreatePreferences(Bundle bundle, String screen) {
             this.mScreen = getArguments().getString(SCREEN_TAG);
+            this.mTitle = getArguments().getString(SCREEN_TITLE);
+            getActivity().setTitle(mTitle);
             setPreferencesFromResource(R.xml.preferences_main, mScreen);
         }
     }

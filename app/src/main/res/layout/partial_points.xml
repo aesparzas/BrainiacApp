@@ -15,10 +15,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/linear_points">
             <TextView
-                style="@style/ContentLabelLight"
+                style="@style/ContentLabel"
                 android:text="@string/title_points" />
             <TextView
-                style="@style/ContentLabelLight"
+                style="@style/ContentLabel"
                 android:text="@string/subtitle_date" />
         </LinearLayout>
 
@@ -47,7 +47,6 @@
             app:layout_constraintBottom_toBottomOf="parent">
             <Button
                 style="@style/Button"
-                android:id="@+id/btn_see_all"
                 android:text="@string/action_see_all"/>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

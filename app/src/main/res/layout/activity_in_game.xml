@@ -21,7 +21,6 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <include layout="@layout/partial_question"
             android:id="@+id/partial_q" />
-
         <LinearLayout
             style="@style/CardViewTitle"
             android:layout_gravity="bottom"

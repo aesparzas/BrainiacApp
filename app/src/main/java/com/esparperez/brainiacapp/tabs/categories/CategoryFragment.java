@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.tabs.categories;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,8 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.esparperez.brainiacapp.R;
-import com.esparperez.brainiacapp.model.entity.Game;
-import com.esparperez.brainiacapp.tabs.play.PlayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +19,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class CategoriesFragment extends Fragment {
+public class CategoryFragment extends Fragment implements CategoryInterface.CategoryView {
 
-    public CategoriesFragment() {}
+    public CategoryFragment() {}
 
-    public static CategoriesFragment newInstance() {
-        CategoriesFragment fragment = new CategoriesFragment();
+    public static CategoryFragment newInstance() {
+        CategoryFragment fragment = new CategoryFragment();
         return fragment;
     }
 
@@ -33,6 +32,7 @@ public class CategoriesFragment extends Fragment {
     RecyclerView recyclerView;
 
     private CategoryAdapter mAdapter;
+    private CategoryInterface.CategoryPresenter mPresenter;
 
     @Nullable
     @Override
@@ -44,27 +44,33 @@ public class CategoriesFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setPresenter();
+        mPresenter.getContent();
+    }
+
     private void setupRecycler() {
         if (mAdapter == null) mAdapter = new CategoryAdapter(getContext());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(mAdapter);
+    }
 
-        // Sólo para prueba
-        List<CategoryTest> categories = new ArrayList<>();
-        String [] arrTitle = {getString(R.string.title_cv_anime), getString(R.string.title_cv_book),
-                getString(R.string.title_cv_movie), getString(R.string.title_cv_music),
-                getString(R.string.title_cv_tv)};
-        String [] arrDesc = {getString(R.string.description_cv_anime), getString(R.string.description_cv_book),
-                getString(R.string.description_cv_movie), getString(R.string.description_cv_music),
-                getString(R.string.description_cv_tv)};
-        for (int i = 0; i < arrTitle.length; i++) {
-            CategoryTest categoryTest = new CategoryTest();
-            categoryTest.setName(arrTitle[i]);
-            categoryTest.setDescription(arrDesc[i]);
-            categoryTest.setImageResource(R.drawable.img_profile_picture);
-            categories.add(categoryTest);
+    private void setPresenter() {
+        if (mPresenter == null) {
+            mPresenter = new CategoryPresenter(this);
         }
-        mAdapter.setValues(categories);
+    }
+
+    @Override
+    public void showContent(List<CategoryTest> categoryList) {
+        mAdapter.setValues(categoryList);
+    }
+
+    @Override
+    public Context setContext() {
+        return getContext();
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_padding_size_medium">
+    <Button
+        style="@style/Button"
+        android:id="@+id/btn_see_all"
+        android:text="@string/action_see_all" />
+</LinearLayout>

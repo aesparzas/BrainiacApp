@@ -81,24 +81,27 @@ public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView tvTitle;
         @BindView(R.id.tv_item_description)
         TextView tvDescription;
-        @OnClick(R.id.btn_item)
+        @BindView(R.id.iv_category)
+        ImageView ivCategory;
 
+        @OnClick(R.id.btn_item)
         void click() {
             int position = getAdapterPosition();
-            String preferenceScreen = null;
-            String preferenceTitle = null;
+            String preferenceScreen = "";
+            String preferenceTitle = "";
+            Context context = itemView.getContext();
             switch (position) {
                 case 0 :
                     preferenceScreen = itemView.getContext().getString(R.string.key_settings_roulette);
-                    preferenceTitle = itemView.getContext().getString(R.string.key_settings_roulette);
+                    preferenceTitle = context.getString(R.string.title_category_roulette);
                     break;
                 case 1:
                     preferenceScreen = itemView.getContext().getString(R.string.key_settings_subject);
-                    preferenceTitle = itemView.getContext().getString(R.string.key_settings_subject);
+                    preferenceTitle = context.getString(R.string.title_category_subject);
                     break;
                 case 2:
                     preferenceScreen = itemView.getContext().getString(R.string.key_settings_fact);
-                    preferenceTitle = itemView.getContext().getString(R.string.key_settings_fact);
+                    preferenceTitle = context.getString(R.string.title_category_fact);
                     break;
             }
             Intent intent = new Intent(itemView.getContext(), ConfigurationActivity.class);
@@ -106,8 +109,6 @@ public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             intent.putExtra(SCREEN_TITLE, preferenceTitle);
             itemView.getContext().startActivity(intent);
         }
-        @BindView(R.id.iv_category)
-        ImageView ivCategory;
 
         public PlayHolder(@NonNull View itemView) {
             super(itemView);

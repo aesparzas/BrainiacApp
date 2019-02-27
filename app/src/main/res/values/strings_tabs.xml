@@ -8,24 +8,26 @@
 
     <!-- Play -->
     <string name="title_cv_roulette">Roulette</string>
-    <string name="description_cv_roulette">Random questions of random categories. Prove you are a know-it-all</string>
     <string name="title_cv_subject">Subject</string>
-    <string name="description_cv_subject">Random questions of one game. So you can master one subject</string>
     <string name="title_cv_fact">Fact</string>
+    <string name="description_cv_roulette">Random questions of random categories. Prove you are a know-it-all</string>
+    <string name="description_cv_subject">Random questions of one game. So you can master one subject</string>
     <string name="description_cv_fact">Read about your favourite game. One new per day</string>
     <string name="action_configure">CONFIGURE</string>
 
     <!-- Statistics -->
     <string name="title_summary">Summary</string>
-    <string name="detail_total_questions_showed">Total questions showed: </string>
-    <string name="detail_questions_answered">Questions answered correctly: </string>
-    <string name="detail_facts_read">Facts read: </string>
-    <string name="detail_matches_played">Matches played: </string>
+    <string name="summary_total_questions_showed">Total questions showed:\u0020</string>
+    <string name="summary_questions_answered">Questions answered correctly:\u0020</string>
+    <string name="summary_facts_read">Facts read:\u0020</string>
+    <string name="summary_matches_played">Matches played:\u0020</string>
+
     <!-- Points -->
     <string name="title_points">Points</string>
     <string name="subtitle_date">Date</string>
     <string name="score_points">pts</string>
     <string name="action_see_all">SEE ALL</string>
+    <string name="action_see_more">SEE MORE</string>
 
     <!-- Categories -->
     <string name="title_cv_anime">Anime</string>
@@ -39,9 +41,6 @@
     <string name="title_cv_tv">TV series</string>
     <string name="description_cv_tv">Random questions about popular TV series.</string>
 
-
-
-
-
+    <!-- API description -->
 
 </resources>

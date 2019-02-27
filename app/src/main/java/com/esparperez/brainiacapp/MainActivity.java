@@ -14,6 +14,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.esparperez.brainiacapp.preferences.ConfigurationActivity;
+import com.esparperez.brainiacapp.tabs.TabsContainerFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.menu_configurations:
                 Intent intent = new Intent(this, ConfigurationActivity.class);
                 intent.putExtra(SCREEN_TAG, getString(R.string.key_settings_main));
-                intent.putExtra(SCREEN_TITLE, getString(R.string.key_settings_main));
+                intent.putExtra(SCREEN_TITLE, getString(R.string.title_preference_activity));
                 startActivity(intent);
                 break;
             case R.id.menu_about:

@@ -29,20 +29,20 @@
             app:layout_constraintEnd_toEndOf="parent">
             <TextView
                 style="@style/ContentLabel"
-                android:id="@+id/tv_detail_questions"
-                android:text="@string/detail_total_questions_showed" />
+                android:id="@+id/tv_summary_questions"
+                android:text="@string/summary_total_questions_showed" />
             <TextView
                 style="@style/ContentLabel"
-                android:id="@+id/tv_detail_answers"
-                android:text="@string/detail_questions_answered" />
+                android:id="@+id/tv_summary_answers"
+                android:text="@string/summary_questions_answered" />
             <TextView
                 style="@style/ContentLabel"
-                android:id="@+id/tv_detail_facts"
-                android:text="@string/detail_facts_read" />
+                android:id="@+id/tv_summary_facts"
+                android:text="@string/summary_facts_read" />
             <TextView
                 style="@style/ContentLabel"
-                android:id="@+id/tv_detail_matches"
-                android:text="@string/detail_matches_played" />
+                android:id="@+id/tv_summary_matches"
+                android:text="@string/summary_matches_played" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
