@@ -22,7 +22,7 @@ import com.esparperez.brainiacapp.model.entity.User;
 @TypeConverters(DateConverter.class)
 public abstract class AppDataBase extends RoomDatabase {
     private static final String DB_NAME = "Brainiac.db";
-    private static AppDataBase instance;
+    private static volatile AppDataBase instance;
 
     public abstract CategoryDao categoryDao();
     public abstract ScoreHasCategoryDao scoreHasCategoryDao();

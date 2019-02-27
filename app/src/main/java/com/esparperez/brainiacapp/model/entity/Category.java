@@ -13,8 +13,7 @@ public class Category {
     @ColumnInfo(name = "name")
     private String name;
 
-    public Category(long idCategory, String name) {
-        this.idCategory = idCategory;
+    public Category(String name) {
         this.name = name;
     }
 
