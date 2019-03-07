@@ -11,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.esparperez.brainiacapp.R;
-import com.esparperez.brainiacapp.model.entity.Game;
-import com.esparperez.brainiacapp.tabs.categories.CategoryTest;
+import com.esparperez.brainiacapp.data.model.entity.Game;
 
 import java.util.ArrayList;
 import java.util.List;

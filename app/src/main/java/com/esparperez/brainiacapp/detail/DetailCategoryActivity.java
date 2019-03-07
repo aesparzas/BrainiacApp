@@ -14,7 +14,7 @@ import com.esparperez.brainiacapp.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.esparperez.brainiacapp.Constants.CATEGORY_TYPE;
+import static com.esparperez.brainiacapp.utils.Constants.CATEGORY_TYPE;
 
 public class DetailCategoryActivity extends AppCompatActivity implements DetailInterface.DetailView{
 

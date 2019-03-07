@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.esparperez.brainiacapp.R;
 import com.esparperez.brainiacapp.game.InGameActivity;
-import com.esparperez.brainiacapp.model.entity.Game;
+import com.esparperez.brainiacapp.data.model.entity.Game;
 import com.esparperez.brainiacapp.preferences.ConfigurationActivity;
 
 import java.util.ArrayList;
@@ -23,8 +23,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.esparperez.brainiacapp.Constants.SCREEN_TAG;
-import static com.esparperez.brainiacapp.Constants.SCREEN_TITLE;
+import static com.esparperez.brainiacapp.utils.Constants.SCREEN_TAG;
+import static com.esparperez.brainiacapp.utils.Constants.SCREEN_TITLE;
 
 public class PlayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

@@ -1,5 +1,6 @@
 package com.esparperez.brainiacapp.game;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import butterknife.OnClick;
 
 public class InGameActivity extends AppCompatActivity implements InGameInterface.InGameView {
 
-    private static final String GAME_MODE = "gameMode";
+    private static final String GAME_MODE = "game_mode";
 
     private InGameInterface.InGamePresenter mPresenter;
     private int mGameMode;
@@ -55,12 +56,14 @@ public class InGameActivity extends AppCompatActivity implements InGameInterface
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
         setPresenter();
+        mPresenter.startGame(mGameMode);
     }
 
     @OnClick(R.id.btn_answer)
@@ -78,6 +81,21 @@ public class InGameActivity extends AppCompatActivity implements InGameInterface
     /*
      * Métodos de View
      */
+
+    @Override
+    public Context setContext() {
+        return this;
+    }
+
+    @Override
+    public void showAnimationCategory() {
+
+    }
+
+    @Override
+    public void showAnimationGameMode() {
+
+    }
 
     @Override
     public void showQuestion(String category, String question, String opt1, String opt2, String opt3, String opt4) {

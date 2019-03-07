@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.esparperez.brainiacapp.Constants.CATEGORY_TYPE;
+import static com.esparperez.brainiacapp.utils.Constants.CATEGORY_TYPE;
 
 public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public CategoryAdapter(Context context) {
