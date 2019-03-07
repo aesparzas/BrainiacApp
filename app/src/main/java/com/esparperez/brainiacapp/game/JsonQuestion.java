@@ -140,11 +140,11 @@ public class JsonQuestion {
         }
         return this;
     }
-
-    public void func(){
-        JsonQuestion jsonQuestion = new JsonQuestion("question","first", "second", "third", "fourth", "answer");
-        JSONObject newJson;
-        jsonQuestion = jsonQuestion.fromJson(newJson);
-        jsonQuestion.getAnswer();
-    }
+//
+//    public void func(){
+//        JsonQuestion jsonQuestion = new JsonQuestion("question","first", "second", "third", "fourth", "answer");
+//        JSONObject newJson;
+//        jsonQuestion = jsonQuestion.fromJson(newJson);
+//        jsonQuestion.getAnswer();
+//    }
 }

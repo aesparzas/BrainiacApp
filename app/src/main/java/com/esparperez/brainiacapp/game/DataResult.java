@@ -114,6 +114,7 @@ public class DataResult {
                 question.setAnswer(trackList.get(answer).getTrack().getTrackName());
                 break;
         }
+        //TODO llamar al listener
     }
 
     public Question getQuestion() {

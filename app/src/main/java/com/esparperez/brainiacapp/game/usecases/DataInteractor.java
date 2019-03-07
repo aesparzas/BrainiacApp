@@ -26,7 +26,7 @@ public class DataInteractor implements InGameInterface.DataInteractor {
 
     @Override
     public void loadData(int category) {
-        Question question = null;
+        Question question = new Question();
         switch (category) {
             case ANIME_CATEGORY:
                 break;
